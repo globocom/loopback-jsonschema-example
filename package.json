@@ -1,0 +1,21 @@
+{
+  "name": "loopback-jsonschema-example",
+  "version": "0.0.0",
+  "description": "Example using loopback-jsonschema module",
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/globocom/loopback-jsonschema-example.git"
+  },
+  "private": true,
+  "author": "Backstage <backstage@corp.globo.com>",
+  "license": "MIT",
+  "dependencies": {
+    "loopback": "1.8.x",
+    "loopback-explorer": "1.1.x",
+    "loopback-jsonschema": ""
+  },
+  "devDependencies": {
+    "node-dev": ""
+  }
+}

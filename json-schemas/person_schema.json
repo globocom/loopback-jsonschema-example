@@ -1,0 +1,15 @@
+{
+  "type": "object",
+  "title": "Person",
+  "modelName": "person",
+  "collectionName": "people",
+  "properties": {
+    "firstName": {
+      "type": "string"
+    },
+
+    "lastName": {
+      "type": "string"
+    }
+  }
+}
