@@ -1,12 +1,15 @@
-var path = require('path');
+var boot = require('loopback-boot');
 var loopback = require('loopback');
 var loopbackJsonSchema = require('loopback-jsonschema');
 
 var app = module.exports = loopback();
 
-app.boot(__dirname);
+app.set('port', process.env.PORT || 5000);
+app.set('host', '0.0.0.0');
 
-loopbackJsonSchema.initLoopbackJsonSchema(app);
+boot(app, __dirname);
+
+loopbackJsonSchema.init(app);
 
 app.on('middleware:handlers', function() {
     // API explorer (if present)
@@ -21,9 +24,12 @@ app.on('middleware:handlers', function() {
     }
 });
 
-app.installMiddleware();
+loopbackJsonSchema.enableJsonSchemaMiddleware(app);
+
+var restApiRoot = app.get('restApiRoot') || '/api';
 
 app.get('/', loopback.status());
+app.use(restApiRoot, loopback.rest());
 
 app.start = function() {
     return app.listen(function() {
