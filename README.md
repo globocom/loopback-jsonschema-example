@@ -17,7 +17,7 @@ Add a `loopbackJsonSchemaDb` entry to the `datasources.json` file with your data
 ```
 ## Using
 
-### Instaling
+### Installing
 
 ```
 make setup
