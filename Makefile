@@ -6,14 +6,13 @@ help:
 
 setup:
 	rm -rf node_modules
-	rm -rf modules_cache
-	npm update --cache modules_cache
+	npm install
 
 run:
-	foreman start -f Procfile.local
+	node app.js
 
 post_schema:
-	curl -i -XPOST -H "Content-Type: application/json" http://localhost:5000/api/json-schemas -T json-schemas/person_schema.json
+	curl -i -XPOST -H "Content-Type: application/json" http://localhost:5000/api/item-schemas -T json-schemas/person_schema.json
 
 create_person:
 	curl -i -XPOST -H "Content-Type: application/json" http://localhost:5000/api/people -T json-schemas/person.json

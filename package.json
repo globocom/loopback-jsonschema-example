@@ -11,9 +11,10 @@
   "author": "Backstage <backstage@corp.globo.com>",
   "license": "MIT",
   "dependencies": {
-    "loopback": "1.8.x",
-    "loopback-explorer": "1.1.x",
-    "loopback-jsonschema": ""
+    "loopback": "2.x",
+    "loopback-explorer": "1.x",
+    "loopback-jsonschema": "",
+    "loopback-boot": ""
   },
   "devDependencies": {
     "node-dev": ""
